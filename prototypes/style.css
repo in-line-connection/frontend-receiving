@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 20px/1.168;
+}
+
+a {
+  text-decoration: none;
+}
+hr {
+  margin-bottom: 1rem;
+}
+body {
+  background-color: #ededed;
+}
+input {
+  min-width: 60px;
+  min-height: 35px;
+  padding: 7px;
+}
+.Receiving form {
+  font-size: 35px;
+}
+.View_ReportsButton {
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 30px;
+}
+
+.alert_section {
+  background-color: red;
+  border: 4px yellow solid;
+  border-radius: 15%;
+  width: 80vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.header {
+  display: flex;
+  color: rgb(238, 29, 29);
+}
+.header__text {
+  padding-top: 80px;
+}
+
+.footer {
+  background-color: red;
+  margin: 1px;
+  margin-top: 2rem;
+}
+
+.buttons__container {
+  display: grid;
+  grid-template-columns: 109px 109px 109px;
+  grid-template-rows: 60px 60px 60px;
+}
+
+.receiving {
+  margin: 0 20rem;
+}
+
+.receiving__report-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+}
+
+.date__time__container {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem;
+  background-color: #dddddd;
+  padding: 0.5rem;
+}
+
+.receiving__report-list-item {
+  flex: 0 1 calc(50% - 1rem);
+  margin-bottom: 1.5rem;
+}
+
+/*Util Class */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__image {
+  width: 80vw;
+}
+.container {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  padding-top: 15px;
+  padding-bottom: 100px;
+  width: 60vw;
+}
+
+.container button {
+  height: 45px;
+  width: 100px;
+}
+.header__image img {
+  padding: 3px;
+  width: 100vw;
+}
+
+.vitals__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.header__trauma {
+  text-align: center;
+}
+.header__medical {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rhythm__field {
+  font-weight: bolder;
+}
+
+.narrative__textarea {
+  margin-bottom: 40px;
+}
+.header__cardiac {
+  text-align: center;
+}
+.container__box {
+  text-align: center;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+.witness__class {
+  margin-left: 2rem;
+}
+.witness__box {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.not__class {
+  margin-left: 2rem;
+}
+.not__box {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 2rem;
+}
