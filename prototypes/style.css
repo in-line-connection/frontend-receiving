@@ -3,6 +3,11 @@
   margin: 0;
   padding: 0;
 }
+.header {
+  background-color:rgb(12, 12, 75);
+  max-height: 4rem;
+  color:  #edededce;
+}
 
 html {
   font: 20px/1.168;
@@ -47,18 +52,15 @@ li {
   list-style-type: none;
 }
 
-.header {
-  display: flex;
-  color: rgb(238, 29, 29);
-}
+
 .header__text {
-  padding-top: 80px;
+  text-align: center;
 }
 
 .footer {
-  background-color: red;
-  margin: 1px;
-  margin-top: 2rem;
+  background-color: #0c0c4b;
+  min-height: 2rem;
+  
 }
 
 .buttons__container {
@@ -94,7 +96,7 @@ li {
 .receiving__report-list-item {
   flex: 0 1 calc(50% - 1rem);
   margin-bottom: 1.5rem;
-  
+
   
 }
 .receiving__report-list-item-info {
