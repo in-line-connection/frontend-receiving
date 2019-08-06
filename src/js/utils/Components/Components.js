@@ -30,8 +30,8 @@ class Components {
 
     renderReportSingle(endpoint, id) {
         // const reportSing = this.getAppContext()
-        const mainContent = Html().create('main');
-        const container = Html().create('div').addClass('container');
+        const mainContent = Html().select('main');
+        const container = Html().select('.container');
         Api().getRequest(`http://localhost:8080/api/${endpoint}/${id}`, (singleReport) => {
 
             const div = Html().create('div').addClass('receiving');
@@ -105,7 +105,7 @@ class Components {
             section.addChild(narSection)
             div.addChild(title)
             div.addChild(section)
-            container.addChild(div)
+            container.replace(div)
 
             // mainContent.addChild(container);
             // reportSing.addChild(mainContent)
