@@ -69,6 +69,31 @@ li {
   grid-template-rows: 60px 60px 60px;
 }
 
+.main-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav__list {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__list a:hover {
+  color: #ffb9ae;
+}
+
+.nav__list-item {
+  margin-right: 1rem;
+}
+
+.nav__list-item:last-child {
+  margin-right: 0;
+}
+
 .receiving {
   margin: 0 20rem;
 }
