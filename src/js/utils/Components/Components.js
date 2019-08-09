@@ -15,6 +15,15 @@ class Components {
             .addClass("wrapper");
     }
 
+    renderAllReports() {
+        const container = Html().select('.container');
+        const ul = Html().create('ul').addClass('receiving__report');
+        this.renderReports("trauma-reports", ul);
+        this.renderReports("medical-reports", ul);
+        this.renderReports("cardiac-reports", ul);
+        container.replace(ul);
+    }
+
     renderMainContent() {
         const mainContent = Html().create('main');
         const container = Html().create('div').addClass('container');
@@ -34,7 +43,7 @@ class Components {
         const container = Html().select('.container');
         Api().getRequest(`http://localhost:8080/api/${endpoint}/${id}`, (singleReport) => {
 
-            const div = Html().create('div').addClass('receiving');
+            const div = Html().create('div').addClass('receiving__report');
             const title = Html().create('h1').addClass('receiving__title').text('Receiving Report')
             const section = Html().create('section').addClass('receiving__report')
             const genInfoTitle = Html().create('h2').addClass('receiving__report__title').text('General Info')
@@ -106,16 +115,8 @@ class Components {
             div.addChild(title)
             div.addChild(section)
             container.replace(div)
-
-            // mainContent.addChild(container);
-            // reportSing.addChild(mainContent)
-
-            // mainContent.replace reportSing;
-
-
         })
         mainContent.replace(container)
-
     }
 
     renderReports(endpoint, ul) {
@@ -126,13 +127,8 @@ class Components {
                 const link = Html().create('a').addClass('receiving__report-list-item').addAttribute('href', `/endpoint/${report.id}`).text(report.id)
                     .click((event) => {
                         event.preventDefault();
-                        //need to render single page
                         this.renderReportSingle(endpoint, report.id);
-
-
-
                     })
-
                 const aContainer = Html().create('a').addAttribute('href', '#')
                 const reportNum = (Html().create('li').addClass('receiving__report-list-item').text(report.id));
                 aContainer.addChild(reportNum);
@@ -164,8 +160,25 @@ class Components {
         const mainHeaderTitle = Html().create("h1")
             .addClass("main-header__title")
             .text("In-Line Connect")
+        const nav = this.renderNav();
         mainHeader.addChild(mainHeaderTitle);
+        mainHeader.addChild(nav)
         return mainHeader;
+    }
+
+    renderNav() {
+        const nav = Html().create("nav").addClass("nav");
+        const navList = Html().create("ul").addClass("nav__list");
+        const navListItemOne = Html().create("li").addClass("nav__list-item").addChild(
+            Html().create("a").addAttribute("href", "#").text("All Reports")
+                .click(event => {
+                    event.preventDefault();
+                    this.renderAllReports();
+                })
+        );
+        navList.addChild(navListItemOne);
+        nav.addChild(navList);
+        return nav;
     }
 
     renderPageHome() {
