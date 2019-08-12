@@ -18,9 +18,8 @@ class Components {
     renderAllReports() {
         const container = Html().select('.container');
         const ul = Html().create('ul').addClass('receiving__report');
-        this.renderReports("trauma-reports", ul);
-        this.renderReports("medical-reports", ul);
-        this.renderReports("cardiac-reports", ul);
+        this.renderReports("motor-vehicle-crash-reports", ul);
+        this.renderReports("other-reports", ul);
         container.replace(ul);
     }
 
@@ -28,9 +27,8 @@ class Components {
         const mainContent = Html().create('main');
         const container = Html().create('div').addClass('container');
         const ul = Html().create('ul').addClass('receiving__report');
-        this.renderReports("trauma-reports", ul);
-        this.renderReports("medical-reports", ul);
-        this.renderReports("cardiac-reports", ul);
+        this.renderReports("motor-vehicle-crash-reports", ul);
+        this.renderReports("other-reports", ul);
         container.addChild(ul);
         mainContent.addChild(container);
         return mainContent;
@@ -51,12 +49,11 @@ class Components {
             const reportLi = Html().create('li').addClass('receiving__report-list-item').text("Report ID #:")
             const reportField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.id);
             const medicNumLI = Html().create('li').addClass('receiving__report-list-item').text("Medic #:")
-            const medicNumbField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.medicNum);
-            const chiefComLI = Html().create('li').addClass('receiving__report-list-item').text("Chief Complaint:")
-            const chiefComField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.chiefComplaint);
+            const medicNumbField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.medicNum)
             const dateLI = Html().create('li').addClass('receiving__report-list-item').text("Date:")
             const dateField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.date);
-
+            const timeOfIncidentLi = Html().create('li').addClass('receiving__report-list-item').text("Time of Day:")
+            const timeOfIncidentField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.timeOfIncident);
             const vitalsTitle = Html().create('h2').addClass('receiving__report__title').text('Vitals')
             const vitalsUL = Html().create('ul').addClass('receiving__report-list')
             const sexLI = Html().create('li').addClass('receiving__report-list-item').text("Sex:")
@@ -75,6 +72,51 @@ class Components {
             const gcsField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.gcs);
             const sugarLI = Html().create('li').addClass('receiving__report-list-item').text("Glucose Level:")
             const sugarField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.bloodSugar);
+
+            const reportTypeQuestionsTitie = Html().create('h2').addClass('receiving__report__title').text('Report Specific Questions')
+            const reportTYpeQuesiontsUL = Html().create('ul').addClass('receiving__report-list')
+
+
+            if (endpoint == "other-reports") {
+                const incidentLI = Html().create('li').addClass('receiving__report-list-item').text("Incident:")
+                const incidentField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.incident)
+                // these are for Other type reports
+                reportTYpeQuesiontsUL.addChild(incidentLI)
+                reportTYpeQuesiontsUL.addChild(incidentField)
+
+            }
+            if (endpoint == "motor-vehicle-crash-reports") {
+                const seatPositionLI = Html().create('li').addClass('receiving__report-list-item').text("Seat Position:")
+                const seatPositionField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.seatPosition);
+                const speedLI = Html().create('li').addClass('receiving__report-list-item').text("Speed:")
+                const speedField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.speed);
+                const ambulatoryLI = Html().create('li').addClass('receiving__report-list-item').text("Ambulatory:")
+                const ambulatoryField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.ambulatory);
+                const prolongedExtricationLI = Html().create('li').addClass('receiving__report-list-item').text("Prolonged Extrication:")
+                const prolongedExtricationField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.prolongedExtrication);
+                const immobilizedLI = Html().create('li').addClass('receiving__report-list-item').text("Immobilized:")
+                const immobilizedField = Html().create('li').addClass('receiving__report-list-item').text(singleReport.immobilized);
+                // These are for MVC crash reports
+                reportTYpeQuesiontsUL.addChild(seatPositionLI)
+                reportTYpeQuesiontsUL.addChild(seatPositionField)
+                reportTYpeQuesiontsUL.addChild(speedLI)
+                reportTYpeQuesiontsUL.addChild(speedField)
+                reportTYpeQuesiontsUL.addChild(ambulatoryLI)
+                reportTYpeQuesiontsUL.addChild(ambulatoryField)
+                reportTYpeQuesiontsUL.addChild(prolongedExtricationLI)
+                reportTYpeQuesiontsUL.addChild(prolongedExtricationField)
+                reportTYpeQuesiontsUL.addChild(immobilizedLI)
+                reportTYpeQuesiontsUL.addChild(immobilizedField)
+            }
+
+
+            ;
+
+
+
+
+
+
 
             const narSection = Html().create('section')
             const narTitle = Html().create('h4').text('Narrative')
@@ -95,14 +137,16 @@ class Components {
             vitalsUL.addChild(gcsField)
             vitalsUL.addChild(sugarLI)
             vitalsUL.addChild(sugarField)
+
+
             genInfoUL.addChild(reportLi)
             genInfoUL.addChild(reportField)
             genInfoUL.addChild(dateLI)
             genInfoUL.addChild(dateField)
+            genInfoUL.addChild(timeOfIncidentLi)
+            genInfoUL.addChild(timeOfIncidentField)
             genInfoUL.addChild(medicNumLI)
             genInfoUL.addChild(medicNumbField)
-            genInfoUL.addChild(chiefComLI)
-            genInfoUL.addChild(chiefComField)
             genInfoUL.addChild(sexLI)
             genInfoUL.addChild(sexField)
             genInfoUL.addChild(ageLI)
@@ -111,6 +155,8 @@ class Components {
             section.addChild(genInfoUL)
             section.addChild(vitalsTitle)
             section.addChild(vitalsUL)
+            section.addChild(reportTypeQuestionsTitie)
+            section.addChild(reportTYpeQuesiontsUL)
             section.addChild(narSection)
             div.addChild(title)
             div.addChild(section)
@@ -122,6 +168,7 @@ class Components {
     renderReports(endpoint, ul) {
         Api().getRequest(`http://localhost:8080/api/${endpoint}`, (responseCollection) => {
             responseCollection.forEach((report) => {
+                const reportType = endpoint.split("-").join(" ")
                 const div = Html().create('div').addClass('receiving__report-list');
                 const reportNumField = Html().create('li').addClass('receiving__report-list-item').text("Report #:");
                 const link = Html().create('a').addClass('receiving__report-list-item').addAttribute('href', `/endpoint/${report.id}`).text(report.id)
@@ -132,8 +179,8 @@ class Components {
                 const aContainer = Html().create('a').addAttribute('href', '#')
                 const reportNum = (Html().create('li').addClass('receiving__report-list-item').text(report.id));
                 aContainer.addChild(reportNum);
-                const chiefComplaintField = Html().create('li').addClass('receiving__report-list-item').text('Chief Complaint:');
-                const chiefComplaint = Html().create('li').addClass('receiving__report-list-item').text(report.chiefComplaint);
+                const chiefComplaintField = Html().create('li').addClass('receiving__report-list-item').text('Cheif Complaint:');
+                const chiefComplaint = Html().create('li').addClass('receiving__report-list-item').text(reportType);
                 const dateField = Html().create('li').addClass('receiving__report-list-item').text('Date:');
                 const date = Html().create('li').addClass('receiving__report-list-item').text(report.date);
                 div.addChild(reportNumField);
