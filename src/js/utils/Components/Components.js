@@ -227,7 +227,7 @@ class Components {
           const immobilizedLI = Html()
             .create("li")
             .addClass("receiving__report-list-item")
-            .text("I:");
+            .text("Immobilized:");
           const immobilizedField = Html()
             .create("li")
             .addClass("receiving__report-list-item")
@@ -485,7 +485,7 @@ class Components {
           div.addChild(dateField);
           div.addChild(date);
           ul.addChild(div);
-          ul.addChild(Html().create("hr"));
+
         });
       }
     );
