@@ -101,19 +101,33 @@ li {
 }
 
 .receiving__report {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1.5rem;
+}
+
+.receiving__reports {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
 }
 
 .receiving__report-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.receiving__reports-list {
   background-color: white;
   border: 1px solid black;
   border-radius: 50px;
   display: flex;
   flex-wrap: wrap;
   padding: 1.5rem;
-  /* justify-content: space-around; */
 }
 
 .date__time__container {
