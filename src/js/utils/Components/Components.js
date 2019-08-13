@@ -18,7 +18,7 @@ class Components {
     const container = Html().select(".container");
     const ul = Html()
       .create("ul")
-      .addClass("receiving__report");
+      .addClass("receiving__reports");
     this.renderReports("motor-vehicle-crash-reports", ul);
     this.renderReports("other-reports", ul);
     this.renderReports("gun-shot-wound-reports", ul);
@@ -33,7 +33,7 @@ class Components {
       .addClass("container");
     const ul = Html()
       .create("ul")
-      .addClass("receiving__report");
+      .addClass("receiving__reports");
     this.renderReports("motor-vehicle-crash-reports", ul);
     this.renderReports("other-reports", ul);
     this.renderReports("gun-shot-wound-reports", ul);
@@ -59,7 +59,7 @@ class Components {
           .text("Receiving Report");
         const section = Html()
           .create("section")
-          .addClass("receiving__report");
+
         const genInfoTitle = Html()
           .create("h2")
           .addClass("receiving__report__title")
@@ -227,7 +227,7 @@ class Components {
           const immobilizedLI = Html()
             .create("li")
             .addClass("receiving__report-list-item")
-            .text("I:");
+            .text("Immobilized:");
           const immobilizedField = Html()
             .create("li")
             .addClass("receiving__report-list-item")
@@ -436,7 +436,7 @@ class Components {
 
           const div = Html()
             .create("div")
-            .addClass("receiving__report-list");
+            .addClass("receiving__reports-list");
           if (heartRateInt < 45 || spO2Int < 85 || gcsInt < 8) {
             div.addClass("redAlert");
           }
@@ -485,7 +485,7 @@ class Components {
           div.addChild(dateField);
           div.addChild(date);
           ul.addChild(div);
-          ul.addChild(Html().create("hr"));
+
         });
       }
     );
