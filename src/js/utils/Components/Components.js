@@ -180,35 +180,42 @@ class Components {
           .addClass("receiving__report-list");
 
         if (endpoint == "other-reports") {
-          const incidentLI = Html()
-            .create("li")
-            .addClass("receiving__report-list-item")
-            .text("Incident:");
-          const incidentField = Html()
-            .create("li")
-            .addClass("receiving__report-list-item")
-            .text(singleReport.incident);
-          // these are for Other type reports
-          reportTYpeQuesiontsUL.addChild(incidentLI);
-          reportTYpeQuesiontsUL.addChild(incidentField);
+          this.renderOtherReportSingle(singleReport, reportTYpeQuesiontsUL);
         }
         if (endpoint == "motor-vehicle-crash-reports") {
-          const seatPositionLI = Html()
+          this.renderMotorVehicleCrashReport(
+            singleReport,
+            reportTYpeQuesiontsUL
+          );
+        }
+        if (endpoint == "gun-shot-wound-reports") {
+          this.renderGunShotWoundReport(singleReport, reportTYpeQuesiontsUL);
+        }
+        if (endpoint == "fall-reports") {
+          const withInjuryLI = Html()
             .create("li")
             .addClass("receiving__report-list-item")
-            .text("Seat Position:");
-          const seatPositionField = Html()
+            .text("With Injury:");
+          const withInjuryField = Html()
             .create("li")
             .addClass("receiving__report-list-item")
-            .text(singleReport.seatPosition);
-          const speedLI = Html()
+            .text(singleReport.withInjury);
+          const lossOfConsciousnessLI = Html()
             .create("li")
             .addClass("receiving__report-list-item")
-            .text("Speed:");
-          const speedField = Html()
+            .text("With Injury:");
+          const lossOfConsciousnessField = Html()
             .create("li")
             .addClass("receiving__report-list-item")
-            .text(singleReport.speed);
+            .text(singleReport.lossOfConsciousness);
+          const heightLI = Html()
+            .create("li")
+            .addClass("receiving__report-list-item")
+            .text("Height:");
+          const heightField = Html()
+            .create("li")
+            .addClass("receiving__report-list-item")
+            .text(singleReport.height);
           const ambulatoryLI = Html()
             .create("li")
             .addClass("receiving__report-list-item")
@@ -217,55 +224,24 @@ class Components {
             .create("li")
             .addClass("receiving__report-list-item")
             .text(singleReport.ambulatory);
-          const prolongedExtricationLI = Html()
-            .create("li")
-            .addClass("receiving__report-list-item")
-            .text("Prolonged Extrication:");
-          const prolongedExtricationField = Html()
-            .create("li")
-            .addClass("receiving__report-list-item")
-            .text(singleReport.prolongedExtrication);
           const immobilizedLI = Html()
             .create("li")
             .addClass("receiving__report-list-item")
-            .text("Immobilized:");
+            .text("I:");
           const immobilizedField = Html()
             .create("li")
             .addClass("receiving__report-list-item")
             .text(singleReport.immobilized);
-          // These are for MVC crash reports
-          reportTYpeQuesiontsUL.addChild(seatPositionLI);
-          reportTYpeQuesiontsUL.addChild(seatPositionField);
-          reportTYpeQuesiontsUL.addChild(speedLI);
-          reportTYpeQuesiontsUL.addChild(speedField);
+          reportTYpeQuesiontsUL.addChild(withInjuryLI);
+          reportTYpeQuesiontsUL.addChild(withInjuryField);
+          reportTYpeQuesiontsUL.addChild(lossOfConsciousnessLI);
+          reportTYpeQuesiontsUL.addChild(lossOfConsciousnessField);
+          reportTYpeQuesiontsUL.addChild(heightLI);
+          reportTYpeQuesiontsUL.addChild(heightField);
           reportTYpeQuesiontsUL.addChild(ambulatoryLI);
           reportTYpeQuesiontsUL.addChild(ambulatoryField);
-          reportTYpeQuesiontsUL.addChild(prolongedExtricationLI);
-          reportTYpeQuesiontsUL.addChild(prolongedExtricationField);
           reportTYpeQuesiontsUL.addChild(immobilizedLI);
           reportTYpeQuesiontsUL.addChild(immobilizedField);
-        }
-        if (endpoint == "gun-shot-wound-reports") {
-          const locationLI = Html()
-            .create("li")
-            .addClass("receiving__report-list-item")
-            .text("Wound Location:");
-          const locationField = Html()
-            .create("li")
-            .addClass("receiving__report-list-item")
-            .text(singleReport.location);
-          const numberOfShotsLI = Html()
-            .create("li")
-            .addClass("receiving__report-list-item")
-            .text("Number Of Shots:");
-          const numberOfShotsField = Html()
-            .create("li")
-            .addClass("receiving__report-list-item")
-            .text(singleReport.numberOfShots);
-          reportTYpeQuesiontsUL.addChild(locationLI);
-          reportTYpeQuesiontsUL.addChild(locationField);
-          reportTYpeQuesiontsUL.addChild(numberOfShotsLI);
-          reportTYpeQuesiontsUL.addChild(numberOfShotsField);
         }
 
         const narSection = Html().create("section");
@@ -317,6 +293,127 @@ class Components {
       }
     );
     mainContent.replace(container);
+  }
+
+  renderOtherReportSingle(singleReport, reportTYpeQuesiontsUL) {
+    const incidentLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Incident:");
+    const incidentField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.incident);
+    // these are for Other type reports
+    reportTYpeQuesiontsUL.addChild(incidentLI);
+    reportTYpeQuesiontsUL.addChild(incidentField);
+  }
+
+  renderMotorVehicleCrashReport(singleReport, reportTYpeQuesiontsUL) {
+    const seatPositionLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Seat Position:");
+    const seatPositionField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.seatPosition);
+    const speedLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Speed:");
+    const speedField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.speed);
+    const ambulatoryLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Ambulatory:");
+    const ambulatoryField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.ambulatory);
+    const prolongedExtricationLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Prolonged Extrication:");
+    const prolongedExtricationField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.prolongedExtrication);
+    const immobilizedLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Immobilized:");
+    const immobilizedField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.immobilized);
+    // These are for MVC crash reports
+    reportTYpeQuesiontsUL.addChild(seatPositionLI);
+    reportTYpeQuesiontsUL.addChild(seatPositionField);
+    reportTYpeQuesiontsUL.addChild(speedLI);
+    reportTYpeQuesiontsUL.addChild(speedField);
+    reportTYpeQuesiontsUL.addChild(ambulatoryLI);
+    reportTYpeQuesiontsUL.addChild(ambulatoryField);
+    reportTYpeQuesiontsUL.addChild(prolongedExtricationLI);
+    reportTYpeQuesiontsUL.addChild(prolongedExtricationField);
+    reportTYpeQuesiontsUL.addChild(immobilizedLI);
+    reportTYpeQuesiontsUL.addChild(immobilizedField);
+  }
+
+  renderGunShotWoundReport(singleReport, reportTYpeQuesiontsUL) {
+    const locationLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Wound Location:");
+    const locationField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.location);
+    const numberOfShotsLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Number Of Shots:");
+    const numberOfShotsField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.numberOfShots);
+    const exitWoundLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Exit Wound Located:");
+    const exitWoundField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.exitWoundLocated);
+    const typeOfWeaponLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Type Of Weapon:");
+    const typeOfWeaponField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.typeOfWeapon);
+    const lossOfConsciousnessLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Loss Of Consciousness:");
+    const lossOfConsciousnessField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.exitWoundLocated);
+    reportTYpeQuesiontsUL.addChild(locationLI);
+    reportTYpeQuesiontsUL.addChild(locationField);
+    reportTYpeQuesiontsUL.addChild(numberOfShotsLI);
+    reportTYpeQuesiontsUL.addChild(numberOfShotsField);
+    reportTYpeQuesiontsUL.addChild(exitWoundLI);
+    reportTYpeQuesiontsUL.addChild(exitWoundField);
+    reportTYpeQuesiontsUL.addChild(typeOfWeaponLI);
+    reportTYpeQuesiontsUL.addChild(typeOfWeaponField);
+    reportTYpeQuesiontsUL.addChild(lossOfConsciousnessLI);
+    reportTYpeQuesiontsUL.addChild(lossOfConsciousnessField);
   }
 
   renderReports(endpoint, ul) {
