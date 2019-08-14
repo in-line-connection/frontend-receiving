@@ -57,8 +57,7 @@ class Components {
           .create("h1")
           .addClass("receiving__title")
           .text("Receiving Report");
-        const section = Html()
-          .create("section")
+        const section = Html().create("section");
 
         const genInfoTitle = Html()
           .create("h2")
@@ -296,24 +295,37 @@ class Components {
   }
 
   renderOtherReportSingle(singleReport, reportTYpeQuesiontsUL) {
-    const { incidentLI, incidentField } = this.reportSpecificEntry(
-      singleReport
-    );
-    // these are for Other type reports
-    reportTYpeQuesiontsUL.addChild(incidentLI);
-    reportTYpeQuesiontsUL.addChild(incidentField);
-  }
-
-  reportSpecificEntry(singleReport, title) {
     const incidentLI = Html()
       .create("li")
       .addClass("receiving__report-list-item")
-      .text(`title:`);
+      .text("Incident Description:");
     const incidentField = Html()
       .create("li")
       .addClass("receiving__report-list-item")
       .text(singleReport.incident);
-    return { incidentLI, incidentField };
+    const bluntForceLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Incident Description:");
+    const bluntForceField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.bluntForceTrauma);
+    const penetratingLI = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text("Incident Description:");
+    const penetratingField = Html()
+      .create("li")
+      .addClass("receiving__report-list-item")
+      .text(singleReport.penetratingTrauma);
+
+    reportTYpeQuesiontsUL.addChild(incidentLI);
+    reportTYpeQuesiontsUL.addChild(incidentField);
+    reportTYpeQuesiontsUL.addChild(bluntForceLI);
+    reportTYpeQuesiontsUL.addChild(bluntForceField);
+    reportTYpeQuesiontsUL.addChild(penetratingLI);
+    reportTYpeQuesiontsUL.addChild(penetratingField);
   }
 
   renderMotorVehicleCrashReport(singleReport, reportTYpeQuesiontsUL) {
@@ -485,7 +497,6 @@ class Components {
           div.addChild(dateField);
           div.addChild(date);
           ul.addChild(div);
-
         });
       }
     );
