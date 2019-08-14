@@ -157,7 +157,7 @@ class Components {
         const gcsLI = Html()
           .create("li")
           .addClass("receiving__report-list-item")
-          .text("Gross Motor Skills:");
+          .text("GCS:");
         const gcsField = Html()
           .create("li")
           .addClass("receiving__report-list-item")
