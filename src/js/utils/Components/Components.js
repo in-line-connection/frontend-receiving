@@ -44,19 +44,21 @@ class Components {
   }
 
   renderReportSingle(endpoint, id) {
-    // const reportSing = this.getAppContext()
     const mainContent = Html().select("main");
     const container = Html().select(".container");
     Api().getRequest(
       `http://localhost:8080/api/${endpoint}/${id}`,
       singleReport => {
+        let reportTypeArray = endpoint.split("-");
+        reportTypeArray.pop();
+        const reportType = capitalizeEachWord(reportTypeArray.join(' ') + ' Report');
         const div = Html()
           .create("div")
           .addClass("receiving__report");
         const title = Html()
           .create("h1")
           .addClass("receiving__title")
-          .text("Receiving Report");
+          .text(reportType);
         const section = Html().create("section");
 
         const genInfoTitle = Html()
@@ -440,8 +442,9 @@ class Components {
       `http://localhost:8080/api/${endpoint}`,
       responseCollection => {
         responseCollection.forEach(report => {
-          const reportType = endpoint.split("-").join(" ");
-
+          let reportTypeArray = endpoint.split("-");
+          reportTypeArray.pop();
+          const reportType = capitalizeEachWord(reportTypeArray.join(' '));
           const heartRateInt = parseInt(report.heartRate, 10);
           const spO2Int = parseInt(report.spO2, 10);
           const gcsInt = parseInt(report.gcs, 10);
@@ -564,4 +567,12 @@ class Components {
     wrapperDiv.addChild(mainFooter);
     app.addChild(wrapperDiv);
   }
+}
+
+function capitalizeEachWord(str) {
+  let result = str.toLowerCase().split(' ');
+  for (var i = 0; i < result.length; i++) {
+    result[i] = result[i].charAt(0).toUpperCase() + result[i].substring(1);
+  }
+  return result.join(' ');
 }
