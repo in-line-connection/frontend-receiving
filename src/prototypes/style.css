@@ -231,6 +231,11 @@ li {
   padding-bottom: 100px;
 }
 
+/* javascript classes */
+.redAlert {
+  background-color: red;
+}
+
 
 /* MEDIA QUERIES */
 
