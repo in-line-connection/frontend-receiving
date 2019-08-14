@@ -76,20 +76,23 @@ li {
 }
 
 .nav__list {
-  align-self: flex-end;
-  width: 100%;
-  align-items: flex-end;
   display: flex;
-  justify-content: center;
 }
 
-.nav__list a:hover {
-  color: #1d038d;
+.nav__list a {
+  color: white;
 }
 
 .nav__list-item {
-  float: right;
+  background-color: #696969;
+  border: 1px black solid;
+  border-radius: 5rem;
   margin-right: 1rem;
+  padding: .5rem;
+}
+
+.nav__list-item:hover {
+  transform: scale(1.02)
 }
 
 .nav__list-item:last-child {
@@ -130,6 +133,14 @@ li {
   flex-wrap: wrap;
   margin-top: 1.5rem;
   padding: 1.5rem;
+}
+
+.receiving__reports-list a:hover {
+  color: purple;
+}
+
+.receiving__reports-list a:visited {
+  color: blue;
 }
 
 .date__time__container {
