@@ -1,3 +1,5 @@
+/* RESETS */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,44 +11,45 @@ html {
   font: 20px/1.168;
 }
 
-
 a {
   text-decoration: none;
 }
+
 hr {
   margin-bottom: 1rem;
 }
+
 body {
   background-color:#e4e0e0f8;
 }
+
 input {
   min-width: 60px;
   min-height: 35px;
   padding: 7px;
 }
-.Receiving form {
-  font-size: 35px;
-}
-.View_ReportsButton {
-  min-width: 200px;
-  min-height: 50px;
-  font-size: 30px;
-}
- 
 
 li {
   list-style-type: none;
 }
 
+/* Application Classes */
 
+.Receiving form {
+  font-size: 35px;
+}
 
+.View_ReportsButton {
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 30px;
+}
 
 .footer {
   background-color:#2a2ae6;
   font-style: oblique;
   color: #dddddd;
   text-align: center;
-  
 }
 
 .buttons__container {
@@ -66,11 +69,10 @@ li {
   color: azure;
   font-style: oblique;
   padding: .5rem;
-  
 }
+
 .nav__list a {
   color: black;
-
 }
 
 .nav__list {
@@ -99,15 +101,35 @@ li {
 }
 
 .receiving__report {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
+  padding: 1.5rem;
+}
+
+.receiving__reports {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
 }
 
 .receiving__report-list {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
+}
+
+.receiving__reports-list {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
 }
 
 .date__time__container {
@@ -120,10 +142,9 @@ li {
 
 .receiving__report-list-item {
   flex: 0 1 calc(50% - 1rem);
-  margin-bottom: 1.5rem;
-
-  
+  margin-bottom: 1.5rem;  
 }
+
 .receiving__report-list-item-info {
   flex: 0 1 calc(50% - 1rem);
   margin-bottom: 1.5rem;
@@ -134,8 +155,66 @@ li {
   justify-content: center;
 }
 
+.container button {
+  height: 45px;
+  width: 100px;
+}
 
-/*Util Class */
+.vitals__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header__trauma {
+  text-align: center;
+}
+
+.header__medical {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rhythm__field {
+  font-weight: bolder;
+}
+
+.narrative__textarea {
+  margin-bottom: 40px;
+}
+
+.header__cardiac {
+  text-align: center;
+}
+
+.container__box {
+  text-align: center;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.witness__class {
+  margin-left: 2rem;
+}
+
+.witness__box {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.not__class {
+  margin-left: 2rem;
+}
+
+.not__box {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Utility Classes */
+
 .wrapper {
   display: grid;
   grid-auto-rows: 3rem auto 2rem;
@@ -152,53 +231,19 @@ li {
   padding-bottom: 100px;
 }
 
-.container button {
-  height: 45px;
-  width: 100px;
+
+/* MEDIA QUERIES */
+
+@media (min-width: 442px) {
+  .main-header {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 }
 
-
-.vitals__section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.header__trauma {
-  text-align: center;
-}
-.header__medical {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.rhythm__field {
-  font-weight: bolder;
-}
-
-.narrative__textarea {
-  margin-bottom: 40px;
-}
-.header__cardiac {
-  text-align: center;
-}
-.container__box {
-  text-align: center;
-  padding-top: 1rem;
-  margin-bottom: 1rem;
-}
-.witness__class {
-  margin-left: 2rem;
-}
-.witness__box {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-.not__class {
-  margin-left: 2rem;
-}
-.not__box {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 2rem;
+@media (min-width: 800px) {
+  .main-header {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
 }
