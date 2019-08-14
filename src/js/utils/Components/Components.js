@@ -308,7 +308,7 @@ class Components {
     const bluntForceLI = Html()
       .create("li")
       .addClass("receiving__report-list-item")
-      .text("Incident Description:");
+      .text("Blunt Force Trauma:");
     const bluntForceField = Html()
       .create("li")
       .addClass("receiving__report-list-item")
@@ -316,7 +316,7 @@ class Components {
     const penetratingLI = Html()
       .create("li")
       .addClass("receiving__report-list-item")
-      .text("Incident Description:");
+      .text("Penetrating Trauma:");
     const penetratingField = Html()
       .create("li")
       .addClass("receiving__report-list-item")
