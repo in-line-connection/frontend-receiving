@@ -249,12 +249,13 @@ class Components {
           reportTYpeQuesiontsUL.addChild(immobilizedField);
         }
 
-        const narSection = Html().create("section");
+        const narSection = Html().create("section").addClass("receiving__report-list");
         const narTitle = Html()
-          .create("h4")
+          .create("h3")
           .text("Narrative");
         const narrField = Html()
           .create("p")
+          .addClass("recieving__report-list-item")
           .text(singleReport.narrative);
 
         narSection.addChild(narTitle);
@@ -484,7 +485,7 @@ class Components {
           const chiefComplaintField = Html()
             .create("li")
             .addClass("receiving__report-list-item")
-            .text("Cheif Complaint:");
+            .text("Chief Complaint:");
           const chiefComplaint = Html()
             .create("li")
             .addClass("receiving__report-list-item")
