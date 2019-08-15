@@ -9,6 +9,7 @@
 
 html {
   font: 20px/1.168;
+  font-family: "helvetica"
 }
 
 a {
@@ -37,6 +38,15 @@ li {
 
 .Receiving form {
   font-size: 35px;
+}
+
+.recieving__report-list-item {
+  font-size: 20px;
+
+}
+
+.recieving__report__title {
+  text-decoration: underline;
 }
 
 .View_ReportsButton {
@@ -123,12 +133,14 @@ li {
 .receiving__report-list {
   display: flex;
   flex-wrap: wrap;
+ 
 }
 
 .receiving__reports-list {
   background-color: white;
   border: 1px solid black;
   border-radius: 50px;
+  box-shadow: 3px 3px 3px grey;
   display: flex;
   flex-wrap: wrap;
   margin-top: 1.5rem;
