@@ -19,10 +19,12 @@ class Components {
     const ul = Html()
       .create("ul")
       .addClass("receiving__reports");
-    this.renderReports("motor-vehicle-crash-reports", ul);
-    this.renderReports("other-reports", ul);
-    this.renderReports("gun-shot-wound-reports", ul);
-    this.renderReports("fall-reports", ul);
+    let redAlertDiv = Html().create('div');
+    ul.addChild(redAlertDiv);
+    this.renderReports("motor-vehicle-crash-reports", ul, redAlertDiv);
+    this.renderReports("other-reports", ul, redAlertDiv);
+    this.renderReports("gun-shot-wound-reports", ul, redAlertDiv);
+    this.renderReports("fall-reports", ul, redAlertDiv);
     container.replace(ul);
   }
 
@@ -34,10 +36,12 @@ class Components {
     const ul = Html()
       .create("ul")
       .addClass("receiving__reports");
-    this.renderReports("motor-vehicle-crash-reports", ul);
-    this.renderReports("other-reports", ul);
-    this.renderReports("gun-shot-wound-reports", ul);
-    this.renderReports("fall-reports", ul);
+    let redAlertDiv = Html().create('div');
+    this.renderReports("motor-vehicle-crash-reports", ul, redAlertDiv);
+    this.renderReports("other-reports", ul, redAlertDiv);
+    this.renderReports("gun-shot-wound-reports", ul, redAlertDiv);
+    this.renderReports("fall-reports", ul, redAlertDiv);
+    container.addChild(redAlertDiv)
     container.addChild(ul);
     mainContent.addChild(container);
     return mainContent;
@@ -437,7 +441,7 @@ class Components {
     reportTYpeQuesiontsUL.addChild(lossOfConsciousnessField);
   }
 
-  renderReports(endpoint, ul) {
+  renderReports(endpoint, ul, redAlertDiv) {
     Api().getRequest(
       `http://localhost:8080/api/${endpoint}`,
       responseCollection => {
@@ -499,7 +503,11 @@ class Components {
           div.addChild(chiefComplaint);
           div.addChild(dateField);
           div.addChild(date);
-          ul.addChild(div);
+          if (div.render().classList.contains('redAlert')) {
+            redAlertDiv.addChild(div);
+          } else {
+            ul.addChild(div);
+          }
         });
       }
     );
