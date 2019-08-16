@@ -257,9 +257,17 @@ li {
 
 /* javascript classes */
 .redAlert {
-  background-color: red;
+  color: white;
+  background-color: rgb(156, 13, 13);
 }
 
+.redAlert a {
+  color: white;
+}
+
+.redAlert a:hover {
+  color: black;
+}
 
 /* MEDIA QUERIES */
 
