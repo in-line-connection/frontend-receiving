@@ -135,7 +135,9 @@ li {
   flex-wrap: wrap;
  
 }
-
+.narrative-item{
+  font-size: 20px;
+}
 .receiving__reports-list {
   background-color: white;
   border: 1px solid black;

@@ -249,13 +249,13 @@ class Components {
           reportTYpeQuesiontsUL.addChild(immobilizedField);
         }
 
-        const narSection = Html().create("section").addClass("receiving__report-list");
+        const narSection = Html().create("section").addClass("narrative__report-list");
         const narTitle = Html()
-          .create("h3")
+          .create("h2")
           .text("Narrative");
         const narrField = Html()
           .create("p")
-          .addClass("recieving__report-list-item")
+          .addClass("narrative-item")
           .text(singleReport.narrative);
 
         narSection.addChild(narTitle);
