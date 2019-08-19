@@ -1,0 +1,288 @@
+/* RESETS */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font: 20px/1.168;
+  font-family: "helvetica"
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  margin-bottom: 1rem;
+}
+
+body {
+  background-color:#e4e0e0f8;
+}
+
+input {
+  min-width: 60px;
+  min-height: 35px;
+  padding: 7px;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Application Classes */
+
+.Receiving form {
+  font-size: 35px;
+}
+
+.recieving__report-list-item {
+  font-size: 20px;
+
+}
+
+.recieving__report__title {
+  text-decoration: underline;
+}
+
+.View_ReportsButton {
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 30px;
+}
+
+.footer {
+  background-color:#2a2ae6;
+  font-style: oblique;
+  color: #dddddd;
+  text-align: center;
+}
+
+.buttons__container {
+  display: grid;
+  grid-template-columns: 109px 109px 109px;
+  grid-template-rows: 60px 60px 60px;
+}
+
+.main-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 3rem;
+  color: black;
+  background-color: #2a2ae6;
+  color: azure;
+  font-style: oblique;
+  padding: .5rem;
+}
+
+.nav__list a {
+  color: black;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__list a {
+  color: white;
+}
+
+.nav__list-item {
+  background-color: #696969;
+  border: 1px black solid;
+  border-radius: 5rem;
+  margin-right: 1rem;
+  padding: .5rem;
+}
+
+.nav__list-item:hover {
+  transform: scale(1.02)
+}
+
+.nav__list-item:last-child {
+  margin-right: 0;
+}
+
+.receiving {
+  margin: 0 20rem;
+}
+
+.receiving__report {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.receiving__reports {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.receiving__report-list {
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+.narrative-item{
+  font-size: 20px;
+}
+.receiving__reports-list {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+  box-shadow: 3px 3px 3px grey;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+}
+
+.receiving__reports-list a:hover {
+  color: purple;
+}
+
+.receiving__reports-list a:visited {
+  color: blue;
+}
+
+.date__time__container {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem;
+  background-color: #dddddd;
+  padding: 0.5rem;
+}
+
+.receiving__report-list-item {
+  flex: 0 1 calc(50% - 1rem);
+  margin-bottom: 1.5rem;
+  font-size: 20px;
+}
+
+.receiving__report-list-item-info {
+  flex: 0 1 calc(50% - 1rem);
+  margin-bottom: 1.5rem;
+}
+
+.receiving__title {
+  display: flex;
+  justify-content: center;
+}
+
+.container button {
+  height: 45px;
+  width: 100px;
+}
+
+.vitals__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header__trauma {
+  text-align: center;
+}
+
+.header__medical {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rhythm__field {
+  font-weight: bolder;
+}
+
+.narrative__textarea {
+  margin-bottom: 40px;
+}
+
+.header__cardiac {
+  text-align: center;
+}
+
+.container__box {
+  text-align: center;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.witness__class {
+  margin-left: 2rem;
+}
+
+.witness__box {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.not__class {
+  margin-left: 2rem;
+}
+
+.not__box {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Utility Classes */
+
+.wrapper {
+  display: grid;
+  grid-auto-rows: 3rem auto 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  padding-top: 15px;
+  padding-bottom: 100px;
+}
+
+/* javascript classes */
+.redAlert {
+  color: white;
+  background-color: rgb(156, 13, 13);
+}
+
+.redAlert a {
+  color: white;
+}
+
+.redAlert a:hover {
+  color: black;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 442px) {
+  .main-header {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .main-header {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
