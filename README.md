@@ -1,4 +1,4 @@
-# In-Line-Connect frontend-receiving (hospital side)
+# In-Line-Connect frontend-receiving (hospital view)
 This is a web application designed for use by hospitals/ EMS first responders to streamline the reporting and receiving process of an emergency.
 
 ## Installation
