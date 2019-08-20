@@ -3,7 +3,7 @@ This is a web application designed for use by hospitals/ EMS first responders to
 
 ## Installation
 1. Clone repository
-1. Run ```npm i``` to install dependencies
+2. Run ```npm i``` to install dependencies
 
 ## Available Scripts
 In the project directory, you can run:
