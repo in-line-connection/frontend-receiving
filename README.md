@@ -8,7 +8,7 @@ This is a web application designed for use by hospitals/ EMS first responders to
 ## Available Scripts
 In the project directory, you can run:
 
-#### npm run dev
+### npm run dev
 Runs the app in the development mode.
 Open http://localhost: + "the server port #" that is listed in the command line console to view it in the browser.
 
